@@ -27,5 +27,5 @@ jobs:
       - run: export NODE_OPTIONS="--max-old-space-size=4096" && export CI="false" && npm run build
       - name: Deploy react
         run: |
-          rsync  -hrz --delete  -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" ./ centos@172.31.16.83:/srv/test-code/
-        shell: bash
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+        
