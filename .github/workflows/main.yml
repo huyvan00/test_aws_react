@@ -27,5 +27,5 @@ jobs:
       - run: export NODE_OPTIONS="--max-old-space-size=4096" && export CI="false" && npm run build
       - name: Deploy react
         run: |
-          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@172.31.26.213 "cd ~/source/test_aws_react && git pull origin main && npm run build"
         
